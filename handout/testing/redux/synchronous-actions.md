@@ -27,27 +27,28 @@ These are pretty straightforward to test.
 
 ```js
 
+import {describe} from '@angular/core/testing';
 import {INCREMENT_COUNTER, DECREMENT_COUNTER} from './counter';
 import * as CounterActions from './counter';
 
-describe('counter action creators', () => {                     
+describe('counter action creators', () => {
   it('increment should create INCREMENT_COUNTER action', () => {
-    chai.expect(CounterActions.increment())                     
-      .to.deep.equal({                                          
-        type: INCREMENT_COUNTER                                 
-      });                                                       
-  });                                                           
+    expect(CounterActions.increment())
+      .toEqual({
+        type: INCREMENT_COUNTER
+      });
+  });
 
   it('decrement should create DECREMENT_COUNTER action', () => {
-    chai.expect(CounterActions.decrement())                     
-      .to.deep.equal({                                          
-        type: DECREMENT_COUNTER                                 
-      });                                                       
-  });                                                           
+    expect(CounterActions.decrement())
+      .toEqual({
+        type: DECREMENT_COUNTER
+      });
+  });
 
   ...
-
-});                                                             
+  
+});                                                          
 ```
 
 We just make sure that our action creators do indeed create actions.
